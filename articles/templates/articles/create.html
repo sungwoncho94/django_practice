@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Article::Create{% endblock title %}
+
+
+{% comment %} 새로운 글 쓸 form이 필요하다! {% endcomment %}
+{% block body %}
+<form method="post">
+  {% csrf_token %}
+  {% comment %} views.py에서 넘겨받은 form보여주면 된다 {% endcomment %}
+  {{ form.as_p }}
+<button type="submit">작성하기</button>
+</form>
+
+{% endblock body %}
+
